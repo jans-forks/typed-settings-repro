@@ -39,7 +39,7 @@ def app(
     ),
 )
 def execute(opts: ExecuteOptions):
-    print("this should run")
+    print("this should run", opts.engine_name)
 
 
 app.add_command(execute)
