@@ -83,9 +83,9 @@ class CLIOptions:
 class ExecuteOptions:
     """Options for execute command."""
     output_path: str = ts.option(init=False, help="Dynamically set from the input filename")
-    engine_name: str = ts.option(default="", converter=empty_str_to_none,help="engine")
+    engine_name: Optional[str] = ts.option(default="", converter=empty_str_to_none,help="engine")
     
 
     def __attrs_post_init__(self):
         """Here we set properties that have init=False and do not fit as property."""
-        self.output_path = os.path.join(self.output_dir, "dummy")
+        self.output_path = "dummy"
